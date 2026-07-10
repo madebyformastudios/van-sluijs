@@ -16,6 +16,19 @@ const steps = [
   { num: "03", label: "Vaste projectleider als contact" },
 ];
 
+const itemVariants = {
+  hidden: { opacity: 0, y: -24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      delay: i * 0.15,
+      ease: "easeOut" as const,
+    },
+  }),
+};
+
 export default function Offerte() {
   const [activeType, setActiveType] = useState("Badkamerrenovatie");
   const [submitted, setSubmitted] = useState(false);
@@ -68,9 +81,14 @@ export default function Offerte() {
               gesprek en een heldere prijsindicatie.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-              {steps.map((step) => (
-                <div
+              {steps.map((step, index) => (
+                <motion.div
                   key={step.num}
+                  custom={index}
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
                   style={{ display: "flex", alignItems: "center", gap: 14 }}
                 >
                   <div
@@ -95,7 +113,7 @@ export default function Offerte() {
                   >
                     {step.label}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
