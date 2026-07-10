@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -191,14 +192,19 @@ export default function Hero() {
               position: "absolute",
               inset: 0,
               background: "#E8EAE6",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              overflow: "hidden",
             }}
           >
-            <span style={{ color: "#94A39A", fontSize: 14, fontWeight: 500 }}>
-              Projectfoto — verbouwing / bouwplaats
-            </span>
+            <Image
+              src="/hero-kitchen.png"
+              alt="Moderne witte keuken met kookeiland"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              style={{
+                objectFit: "cover",
+              }}
+            />
           </div>
           <div
             style={{

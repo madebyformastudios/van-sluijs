@@ -41,16 +41,16 @@ const projects = [
     title: "Jaren-30 renovatie",
     place: "Zierikzee",
     desc: "Volledige verbouwing van een monumentaal woonhuis.",
-    beforeSrc: "/kitchen_before.png",
-    afterSrc: "/kitchen_after.png",
+    beforeSrc: "/jaren_30_before.png",
+    afterSrc: "/jaren_30_after.jpeg",
   },
   {
     id: "prj-6",
     title: "Gastenslaapkamer",
     place: "Kapelle",
-    desc: "Compacte badkamer efficiënt heringedeeld met maatwerk.",
-    beforeSrc: "/bath_before.png",
-    afterSrc: "/bath_after.png",
+    desc: "Compacte slaapkamer efficiënt ingericht met slim maatwerk.",
+    beforeSrc: "/guest_bedroom_before.jpeg",
+    afterSrc: "/guest_bedroom_after.jpeg",
   },
 ];
 
