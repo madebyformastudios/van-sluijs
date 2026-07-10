@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import CountUp from "./CountUp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -134,7 +135,7 @@ export default function Hero() {
                   fontSize: 30,
                 }}
               >
-                26+
+                <CountUp to={26} suffix="+" />
               </div>
               <div style={{ fontSize: 14, color: "#5A665E", fontWeight: 500 }}>
                 jaar ervaring
@@ -153,7 +154,7 @@ export default function Hero() {
                   fontSize: 30,
                 }}
               >
-                640+
+                <CountUp to={640} suffix="+" />
               </div>
               <div style={{ fontSize: 14, color: "#5A665E", fontWeight: 500 }}>
                 opgeleverde projecten

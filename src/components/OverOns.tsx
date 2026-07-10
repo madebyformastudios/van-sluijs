@@ -1,12 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import CountUp from "./CountUp";
 
 const trust = [
-  { stat: "1998", label: "Opgericht", sub: "Meer dan 26 jaar in Zeeland" },
-  { stat: "640+", label: "Projecten", sub: "Opgeleverd en afgeleverd" },
+  { stat: "1998", value: 1998, from: 1950, label: "Opgericht", sub: "Meer dan 26 jaar in Zeeland" },
+  { stat: "640+", value: 640, suffix: "+", label: "Projecten", sub: "Opgeleverd en afgeleverd" },
   { stat: "VCA*", label: "Veiligheid", sub: "Gecertificeerd op de bouwplaats" },
-  { stat: "9,2", label: "Klantcijfer", sub: "Gemiddeld op basis van reviews" },
+  { stat: "9,2", value: 9.2, decimals: 1, decimalSeparator: ",", label: "Klantcijfer", sub: "Gemiddeld op basis van reviews" },
 ];
 
 export default function OverOns() {
@@ -77,7 +78,17 @@ export default function OverOns() {
                   lineHeight: 1,
                 }}
               >
-                {t.stat}
+                {t.value !== undefined ? (
+                  <CountUp
+                    to={t.value}
+                    from={t.from}
+                    suffix={t.suffix}
+                    decimals={t.decimals}
+                    decimalSeparator={t.decimalSeparator}
+                  />
+                ) : (
+                  t.stat
+                )}
               </div>
               <div
                 style={{
